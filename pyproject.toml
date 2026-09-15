@@ -1,0 +1,30 @@
+[project]
+name = "fgd-control-platform"
+version = "1.0.0"
+description = "FlueGasTreatment 燃煤电厂烟气脱硫脱硝与除尘控制平台（zxy-117 Python 版）"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools]
+packages = [
+    "fgd",
+    "fgd.ns",
+    "fgd.store",
+    "fgd.audit",
+    "fgd.fan",
+    "fgd.stack",
+    "fgd.denox",
+    "fgd.ammonia",
+    "fgd.esp",
+    "fgd.scrubber",
+    "fgd.absorber",
+    "fgd.lime",
+    "fgd.oxid",
+    "fgd.sequence",
+    "fgd.console",
+]

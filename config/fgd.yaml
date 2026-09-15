@@ -1,0 +1,42 @@
+platform:
+  name: FlueGasTreatment
+  project_id: zxy-117-py
+  storage_root: var/state
+limits:
+  fan:
+    negative_pressure_target_kpa: -0.85
+    negative_pressure_floor_kpa: -0.35
+    ramp_rate_kpa_per_s: 0.05
+    max_speed_rpm: 1480.0
+    min_speed_rpm: 320.0
+  esp:
+    field_kv_min: 42.0
+    field_kv_max: 72.0
+    rapping_interval_s: 900.0
+  scrubber:
+    ph_low: 5.20
+    ph_recover: 5.60
+    ph_target: 5.80
+    circulation_flow_m3_h: 9600.0
+  ammonia:
+    supply_pressure_kpa_min: 0.25
+    max_rate_kg_h: 420.0
+    min_rate_kg_h: 35.0
+    safety_margin_kg_h: 45.0
+  emission:
+    so2_limit_mg_m3: 35.0
+    nox_limit_mg_m3: 50.0
+    dust_limit_mg_m3: 10.0
+  analyzer:
+    default_offset_mg_m3: 0.0
+    max_offset_mg_m3: 25.0
+    max_age_s: 86400.0
+  lime:
+    min_density_pct: 12.0
+    max_density_pct: 22.0
+    feed_step_pct: 0.8
+pages:
+  - scrubber
+  - denox
+  - esp
+  - alarms

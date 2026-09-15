@@ -1,0 +1,21 @@
+# 构建上下文里只保留生产代码、vendor 依赖与配置。
+.git
+.gitignore
+__pycache__
+**/__pycache__
+*.py[cod]
+*.egg-info
+.pytest_cache
+.venv
+venv
+
+# 测试与工具不进镜像
+tests
+tools
+
+# 本地运行期数据不进镜像
+var
+.mypy_cache
+.ruff_cache
+
+# 注意: vendor/ 必须保留，镜像内离线依赖全靠它。
