@@ -77,8 +77,9 @@ python -m fgd --config config/fgd.yaml serve --host 127.0.0.1 --port 8080
 ## 容器
 
 ```bash
-./build_benzhi_docker.sh fgd-control-platform:1.0.0
+docker build -t fgd-control-platform:1.0.0 .
+docker run --rm -p 8080:8080 fgd-control-platform:1.0.0
 ```
 
-镜像 `python:3.12-slim`，`PIP_NO_INDEX=1` 且依赖全部来自 `vendor/`，构建期与
-运行期都不访问公网；同时构建 `linux/amd64` 与 `linux/arm64`。
+镜像基于 `python:3.12-slim`，直接以 `PYTHONPATH=/app:/app/vendor` 运行，
+依赖全部来自仓库内 `vendor/`，构建期与运行期都不需要联网安装。
